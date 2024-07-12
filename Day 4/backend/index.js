@@ -5,8 +5,10 @@ const employeeModel=require('./model/employeeData');
 require('./connection');
 //to fetch the employee data
 app.get('/employees',async(req,res)=>{
+    console.log('inside')
     try{
-        const response=await employeeModel.find();
+        const data=await employeeModel.find();
+        console.log(data)
         res.send(data)
     }catch(error){
         console.log(error)
